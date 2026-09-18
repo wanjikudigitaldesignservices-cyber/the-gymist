@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" fill="none">
+  <!-- Mark: Stylised G from barbell sleeve end-on -->
+  <g transform="translate(10, 8)">
+    <!-- Outer circle (weight plate) -->
+    <circle cx="32" cy="32" r="28" stroke="#0E0E10" stroke-width="5" fill="none"/>
+    <!-- Horizontal bar through center -->
+    <line x1="0" y1="32" x2="64" y2="32" stroke="#0E0E10" stroke-width="5"/>
+    <!-- G notch opening at top-right -->
+    <path d="M 48 8 A 28 28 0 0 0 32 4" stroke="#F5F3EF" stroke-width="7" fill="none"/>
+  </g>
+  <!-- Wordmark -->
+  <g fill="#0E0E10">
+    <!-- THE -->
+    <text x="82" y="26" font-family="'Archivo Black', sans-serif" font-size="16" letter-spacing="0.08em" font-weight="400">THE</text>
+    <!-- GYMIST -->
+    <text x="82" y="62" font-family="'Archivo Black', sans-serif" font-size="36" letter-spacing="0.08em" font-weight="400">GYMIST</text>
+  </g>
+</svg>

@@ -1,0 +1,380 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* ============================================
+   THE GYMIST — Design System
+   ============================================ */
+
+@theme {
+  /* Brand Colors */
+  --color-ink: #0E0E10;
+  --color-charcoal: #1C1C21;
+  --color-bone: #F5F3EF;
+  --color-white: #FFFFFF;
+  --color-iron: #6B6B73;
+  --color-volt: #D7FF3E;
+  --color-clay: #C4552F;
+  --color-success: #2E7D52;
+  --color-danger: #C0392B;
+
+  /* Extended palette */
+  --color-ink-90: rgba(14, 14, 16, 0.9);
+  --color-ink-70: rgba(14, 14, 16, 0.7);
+  --color-ink-50: rgba(14, 14, 16, 0.5);
+  --color-ink-10: rgba(14, 14, 16, 0.1);
+  --color-volt-20: rgba(215, 255, 62, 0.2);
+  --color-bone-dark: #E8E5DF;
+
+  /* Font families */
+  --font-heading: "Archivo Black", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Border radius — rectilinear brand */
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+}
+/* ============================================
+   Base Styles
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bone);
+  color: var(--color-ink);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400; /* Archivo Black only has one weight */
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(2.75rem, 6vw, 5rem);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================
+   Layout
+   ============================================ */
+.container-gymist {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 768px) {
+  .container-gymist {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+.section-spacing {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 144px;
+    padding-bottom: 144px;
+  }
+}
+
+/* ============================================
+   Signature Device — Rep Counter
+   ============================================ */
+.rep-counter {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-volt);
+  font-weight: 500;
+}
+
+/* ============================================
+   Imagery Treatment
+   ============================================ */
+.img-treatment {
+  filter: saturate(0.9);
+  border: 1px solid rgba(14, 14, 16, 0.1);
+}
+
+.hero-scrim {
+  background: linear-gradient(to top, rgba(14, 14, 16, 0.7) 0%, rgba(14, 14, 16, 0) 100%);
+}
+
+/* ============================================
+   Button Styles
+   ============================================ */
+.btn-volt {
+  background-color: var(--color-volt);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 14px 28px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  min-height: 44px;
+}
+
+.btn-volt:hover {
+  background-color: #c2ea2f;
+  transform: translateY(-1px);
+}
+
+.btn-volt:active {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 14px 28px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-ghost-dark {
+  color: var(--color-ink);
+  border-color: rgba(14, 14, 16, 0.2);
+}
+
+.btn-ghost-dark:hover {
+  background-color: rgba(14, 14, 16, 0.05);
+  border-color: rgba(14, 14, 16, 0.4);
+}
+
+/* ============================================
+   Focus Styles — Accessibility
+   ============================================ */
+*:focus-visible {
+  outline: 2px solid var(--color-volt);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Skip to Content
+   ============================================ */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-volt);
+  color: var(--color-ink);
+  padding: 12px 24px;
+  border-radius: 4px;
+  z-index: 100;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+  top: 12px;
+}
+
+/* ============================================
+   Scrollbar Styling
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bone);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-iron);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink);
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   Admin Theme (Dark)
+   ============================================ */
+.admin-theme {
+  background-color: var(--color-ink);
+  color: var(--color-bone);
+}
+
+.admin-theme ::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+.admin-theme ::-webkit-scrollbar-thumb {
+  background: var(--color-iron);
+}
+
+/* ============================================
+   WhatsApp Pulse Animation
+   ============================================ */
+@keyframes wa-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.wa-pulse {
+  animation: wa-pulse 4s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-pulse {
+    animation: none;
+  }
+}
+
+/* ============================================
+   Stat Counter Animation
+   ============================================ */
+.stat-number {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-volt);
+  line-height: 1;
+}
+
+/* ============================================
+   Tier Badges
+   ============================================ */
+.tier-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tier-01 {
+  background-color: var(--color-volt-20);
+  color: var(--color-ink);
+}
+
+.tier-02 {
+  background-color: rgba(215, 255, 62, 0.35);
+  color: var(--color-ink);
+}
+
+.tier-03 {
+  background-color: var(--color-volt);
+  color: var(--color-ink);
+}
+
+/* ============================================
+   Muscle Chips
+   ============================================ */
+.muscle-chip {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background-color: var(--color-ink-10);
+  color: var(--color-iron);
+}
+
+/* ============================================
+   Clay Section (Nutrition)
+   ============================================ */
+.clay-section {
+  background-color: var(--color-clay);
+  color: var(--color-white);
+}
+
+.clay-section .rep-counter {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================
+   Intensity Meter
+   ============================================ */
+.intensity-bar {
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--color-ink-10);
+}
+
+.intensity-fill {
+  height: 100%;
+  border-radius: 2px;
+  background-color: var(--color-volt);
+  transition: width 0.6s ease;
+}
