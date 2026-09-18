@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { createPublicClient } from '@/lib/supabase/public'
 import { WorkoutLibrary } from '@/components/workouts/workout-library'
 import { RepCounter } from '@/components/ui/rep-counter'
@@ -37,7 +38,9 @@ export default async function WorkoutsPage() {
           </p>
         </div>
 
-        <WorkoutLibrary initialWorkouts={workouts || []} />
+        <Suspense fallback={<div className="py-24 text-center text-[var(--iron)] font-mono text-sm">LOADING WORKOUTS...</div>}>
+          <WorkoutLibrary initialWorkouts={workouts || []} />
+        </Suspense>
       </div>
 
       <CTABand />
