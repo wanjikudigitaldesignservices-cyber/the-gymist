@@ -1,11 +1,8 @@
-import { Container } from "@/components/ui/container"
 import { Check } from "lucide-react"
-import { Button } from "@/components/ui/button"
-
 export default function MembershipsPage() {
   return (
     <div className="py-24 bg-zinc-950 min-h-screen">
-      <Container>
+      <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">Join The Gymist</h1>
           <p className="text-lg text-zinc-400">Choose the perfect plan for your fitness journey.</p>
@@ -23,7 +20,7 @@ export default function MembershipsPage() {
               <li className="flex items-center gap-3 text-zinc-500"><Check className="h-5 w-5 text-zinc-700" /> Group classes</li>
               <li className="flex items-center gap-3 text-zinc-500"><Check className="h-5 w-5 text-zinc-700" /> Personal training</li>
             </ul>
-            <Button className="w-full bg-zinc-800 hover:bg-zinc-700 text-white">Select Basic</Button>
+            <button className="w-full py-2 px-4 rounded-md font-medium transition-colors bg-zinc-800 hover:bg-zinc-700 text-white">Select Basic</button>
           </div>
 
           {/* Pro Plan */}
@@ -38,7 +35,7 @@ export default function MembershipsPage() {
               <li className="flex items-center gap-3 text-zinc-300"><Check className="h-5 w-5 text-gym-red" /> Group classes</li>
               <li className="flex items-center gap-3 text-zinc-500"><Check className="h-5 w-5 text-zinc-700" /> Personal training</li>
             </ul>
-            <Button className="w-full bg-gym-red hover:bg-red-700 text-white">Select Pro</Button>
+            <button className="w-full py-2 px-4 rounded-md font-medium transition-colors bg-gym-red hover:bg-red-700 text-white">Select Pro</button>
           </div>
 
           {/* Elite Plan */}
@@ -52,10 +49,10 @@ export default function MembershipsPage() {
               <li className="flex items-center gap-3 text-zinc-300"><Check className="h-5 w-5 text-gym-red" /> Unlimited classes</li>
               <li className="flex items-center gap-3 text-zinc-300"><Check className="h-5 w-5 text-gym-red" /> 4 PT sessions/month</li>
             </ul>
-            <Button className="w-full bg-zinc-800 hover:bg-zinc-700 text-white">Select Elite</Button>
+            <button className="w-full py-2 px-4 rounded-md font-medium transition-colors bg-zinc-800 hover:bg-zinc-700 text-white">Select Elite</button>
           </div>
         </div>
-      </Container>
+      </div>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "./ui/button"
+
 
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false)
@@ -27,12 +27,12 @@ export function CookieBanner() {
           We use cookies to improve your experience on our site. By using our site, you consent to our cookies.
         </div>
         <div className="flex gap-4">
-          <Button variant="outline" size="sm" onClick={acceptCookies} className="text-zinc-300 border-zinc-700 hover:bg-zinc-800">
+          <button onClick={acceptCookies} className="px-3 py-1 rounded-md text-zinc-300 border border-zinc-700 hover:bg-zinc-800 transition-colors">
             Decline
-          </Button>
-          <Button size="sm" onClick={acceptCookies} className="bg-gym-red hover:bg-red-700 text-white">
+          </button>
+          <button onClick={acceptCookies} className="px-3 py-1 rounded-md bg-gym-red hover:bg-red-700 text-white transition-colors">
             Accept All
-          </Button>
+          </button>
         </div>
       </div>
     </div>

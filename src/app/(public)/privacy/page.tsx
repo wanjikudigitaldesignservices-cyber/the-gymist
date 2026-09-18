@@ -1,9 +1,9 @@
-import { Container } from "@/components/ui/container"
+
 
 export default function PrivacyPage() {
   return (
     <div className="py-24 bg-zinc-950 min-h-screen text-zinc-300">
-      <Container className="max-w-4xl">
+      <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <h1 className="text-4xl font-bold text-white mb-8">Privacy Policy</h1>
         
         <div className="space-y-8 text-lg">
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
             <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
           </section>
         </div>
-      </Container>
+      </div>
     </div>
   )
 }
