@@ -5,10 +5,10 @@ import { RepCounter } from "@/components/ui/rep-counter";
 import { FadeIn } from "@/components/ui/fade-in";
 
 const coaches = [
-  { slug: "brian-otieno", name: "Brian Otieno", role: "Head Coach & Co-founder", speciality: "Powerlifting, strength programming", image_url: "/supabase-mock/brian-otieno.webp" },
-  { slug: "achieng-mboya", name: "Achieng' Mboya", role: "Strength & Conditioning Coach", speciality: "Women's strength, postnatal return", image_url: "/supabase-mock/achieng-mboya.webp" },
-  { slug: "kevin-mwangi", name: "Kevin Mwangi", role: "Performance Coach", speciality: "Hyrox, engine work, running", image_url: "/supabase-mock/kevin-mwangi.webp" },
-  { slug: "njeri-kamau", name: "Njeri Kamau", role: "Mobility & Rehab Lead", speciality: "Movement screening, injury-return", image_url: "/supabase-mock/njeri-kamau.webp" },
+  { slug: "brian-otieno", name: "Brian Otieno", role: "Head Coach & Co-founder", speciality: "Powerlifting, strength programming", image_url: "/supabase-mock/brian-otieno.jpg" },
+  { slug: "achieng-mboya", name: "Achieng' Mboya", role: "Strength & Conditioning Coach", speciality: "Women's strength, postnatal return", image_url: "/supabase-mock/achieng-mboya.jpg" },
+  { slug: "kevin-mwangi", name: "Kevin Mwangi", role: "Performance Coach", speciality: "Hyrox, engine work, running", image_url: "/supabase-mock/kevin-mwangi.jpg" },
+  { slug: "njeri-kamau", name: "Njeri Kamau", role: "Mobility & Rehab Lead", speciality: "Movement screening, injury-return", image_url: "/supabase-mock/njeri-kamau.jpg" },
 ];
 
 export function CoachesPreview() {

@@ -26,21 +26,21 @@ const pillars = [
     description:
       "Barbell and dumbbell programmes built on progressive overload. Squat, press, pull, hinge — coached every rep.",
     href: "/workouts?category=Strength",
-    image: "/supabase-mock/barbell-back-squat.webp",
+    image: "/supabase-mock/barbell-back-squat.jpg",
   },
   {
     title: "Conditioning",
     description:
       "Engine work that builds capacity without burning you out. Intervals, circuits, and Hyrox prep.",
     href: "/workouts?category=Conditioning",
-    image: "/supabase-mock/battle-ropes.webp",
+    image: "/supabase-mock/battle-ropes.jpg",
   },
   {
     title: "Mobility & Recovery",
     description:
       "Movement screening, joint prep, and recovery protocols. The training nobody sees that makes everything else possible.",
     href: "/workouts?category=Mobility",
-    image: "/supabase-mock/90-90-hip-mobility-flow.webp",
+    image: "/supabase-mock/njeri-kamau.jpg",
   },
 ];
 
