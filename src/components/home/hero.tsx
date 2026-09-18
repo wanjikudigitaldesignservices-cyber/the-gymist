@@ -11,8 +11,8 @@ export function HomeHero() {
     <section className="relative h-screen min-h-[600px] flex items-end bg-ink overflow-hidden">
       {/* Background image */}
       <Image
-        src="/supabase-mock/hero.webp"
-        alt="The Gymist training facility"
+        src="/supabase-mock/hero.jpg"
+        alt="Thick gym girls training at The Gymist"
         fill
         className="object-cover object-[center_30%]"
         priority
