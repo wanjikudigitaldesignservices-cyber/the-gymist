@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Dumbbell } from "lucide-react";
 
@@ -39,10 +40,19 @@ export function WorkoutCard({ workout }: WorkoutCardProps) {
           {tierLabels[workout.tier] || "TIER 01"}
         </div>
         
-        {/* Placeholder icon until real images are loaded */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Dumbbell size={40} className="text-white/10" />
-        </div>
+        {workout.image_url ? (
+          <Image
+            src={workout.image_url}
+            alt={workout.name}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Dumbbell size={40} className="text-white/10" />
+          </div>
+        )}
       </div>
 
       {/* Content */}

@@ -1,8 +1,10 @@
-import { createClient } from '@/lib/supabase/server'
+import { createPublicClient } from '@/lib/supabase/public'
 import { RepCounter } from '@/components/ui/rep-counter'
 import { CTABand } from '@/components/ui/cta-band'
 import { Timetable } from '@/components/classes/timetable'
 import { ClassList } from '@/components/classes/class-list'
+
+export const revalidate = 3600; // Cache the page for 1 hour
 
 export const metadata = {
   title: 'Classes & Timetable — The Gymist | Gym in Kilimani, Nairobi',
@@ -10,7 +12,7 @@ export const metadata = {
 }
 
 export default async function ClassesPage() {
-  const supabase = await createClient()
+  const supabase = createPublicClient()
 
   // Fetch all published classes
   const { data: classes } = await supabase

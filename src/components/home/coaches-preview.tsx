@@ -1,13 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { RepCounter } from "@/components/ui/rep-counter";
 import { FadeIn } from "@/components/ui/fade-in";
 
 const coaches = [
-  { slug: "brian-otieno", name: "Brian Otieno", role: "Head Coach & Co-founder", speciality: "Powerlifting, strength programming" },
-  { slug: "achieng-mboya", name: "Achieng' Mboya", role: "Strength & Conditioning Coach", speciality: "Women's strength, postnatal return" },
-  { slug: "kevin-mwangi", name: "Kevin Mwangi", role: "Performance Coach", speciality: "Hyrox, engine work, running" },
-  { slug: "njeri-kamau", name: "Njeri Kamau", role: "Mobility & Rehab Lead", speciality: "Movement screening, injury-return" },
+  { slug: "brian-otieno", name: "Brian Otieno", role: "Head Coach & Co-founder", speciality: "Powerlifting, strength programming", image_url: "/supabase-mock/brian-otieno.webp" },
+  { slug: "achieng-mboya", name: "Achieng' Mboya", role: "Strength & Conditioning Coach", speciality: "Women's strength, postnatal return", image_url: "/supabase-mock/achieng-mboya.webp" },
+  { slug: "kevin-mwangi", name: "Kevin Mwangi", role: "Performance Coach", speciality: "Hyrox, engine work, running", image_url: "/supabase-mock/kevin-mwangi.webp" },
+  { slug: "njeri-kamau", name: "Njeri Kamau", role: "Mobility & Rehab Lead", speciality: "Movement screening, injury-return", image_url: "/supabase-mock/njeri-kamau.webp" },
 ];
 
 export function CoachesPreview() {
@@ -38,9 +39,13 @@ export function CoachesPreview() {
               className="flex-shrink-0 w-[260px] snap-start group"
             >
               <div className="aspect-[3/4] rounded overflow-hidden bg-charcoal mb-4 relative">
-                <div className="absolute inset-0 flex items-center justify-center text-white/10 text-4xl font-heading">
-                  {coach.name.charAt(0)}
-                </div>
+                <Image
+                  src={coach.image_url}
+                  alt={coach.name}
+                  fill
+                  className="object-cover saturate-[0.8] contrast-[1.1] transition-transform duration-700 group-hover:scale-105"
+                  sizes="260px"
+                />
               </div>
               <h3 className="text-lg group-hover:text-iron transition-colors font-heading">
                 {coach.name}

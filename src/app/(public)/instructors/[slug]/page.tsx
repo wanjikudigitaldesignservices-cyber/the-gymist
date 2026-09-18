@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { createClient } from '@/lib/supabase/server'
+import { createPublicClient } from '@/lib/supabase/public'
 import { Breadcrumbs } from '@/components/ui/breadcrumbs'
 import { CTABand } from '@/components/ui/cta-band'
 import { WhatsAppButton } from '@/components/layout/whatsapp-button'
@@ -9,13 +9,15 @@ import { RepCounter } from '@/components/ui/rep-counter'
 import { Award, CheckCircle2, MessageSquare, ArrowRight, Calendar, Star } from 'lucide-react'
 import { FadeIn } from '@/components/ui/fade-in'
 
+export const revalidate = 3600; // Cache the page for 1 hour
+
 interface PageProps {
   params: Promise<{ slug: string }>
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params
-  const supabase = await createClient()
+  const supabase = createPublicClient()
   
   const { data: instructor } = await supabase
     .from('instructors')
@@ -33,7 +35,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function SingleInstructorPage({ params }: PageProps) {
   const { slug } = await params
-  const supabase = await createClient()
+  const supabase = createPublicClient()
 
   // 1. Fetch Instructor
   const { data: instructor } = await supabase

@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server'
+import { createPublicClient } from '@/lib/supabase/public'
 import Link from 'next/link'
 import Image from 'next/image'
 import { RepCounter } from '@/components/ui/rep-counter'
@@ -6,13 +6,15 @@ import { CTABand } from '@/components/ui/cta-band'
 import { FadeIn } from '@/components/ui/fade-in'
 import { Award } from 'lucide-react'
 
+export const revalidate = 3600; // Cache the page for 1 hour
+
 export const metadata = {
   title: 'Our Team — The Gymist | Gym in Kilimani, Nairobi',
   description: 'Meet the coaches at The Gymist. Expert strength, conditioning, and nutrition coaches committed to your results.',
 }
 
 export default async function InstructorsPage() {
-  const supabase = await createClient()
+  const supabase = createPublicClient()
 
   // Fetch all published instructors
   const { data: instructors } = await supabase

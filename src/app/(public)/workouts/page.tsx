@@ -1,7 +1,9 @@
-import { createClient } from '@/lib/supabase/server'
+import { createPublicClient } from '@/lib/supabase/public'
 import { WorkoutLibrary } from '@/components/workouts/workout-library'
 import { RepCounter } from '@/components/ui/rep-counter'
 import { CTABand } from '@/components/ui/cta-band'
+
+export const revalidate = 3600; // Cache the page for 1 hour
 
 export const metadata = {
   title: 'Workouts — The Gymist | Gym in Kilimani, Nairobi',
@@ -9,7 +11,7 @@ export const metadata = {
 }
 
 export default async function WorkoutsPage() {
-  const supabase = await createClient()
+  const supabase = createPublicClient()
 
   const { data: workouts, error } = await supabase
     .from('workouts')

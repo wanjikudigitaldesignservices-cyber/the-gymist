@@ -4,11 +4,20 @@ import Link from "next/link";
 import { RepCounter } from "@/components/ui/rep-counter";
 import { motion } from "framer-motion";
 
+import Image from "next/image";
+
 export function HomeHero() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-end bg-ink overflow-hidden">
-      {/* Background image placeholder — will be replaced with AI-generated image */}
-      <div className="absolute inset-0 bg-gradient-to-br from-charcoal to-ink" />
+      {/* Background image */}
+      <Image
+        src="/supabase-mock/hero.webp"
+        alt="The Gymist training facility"
+        fill
+        className="object-cover object-[center_30%]"
+        priority
+        quality={90}
+      />
       
       {/* Scrim overlay */}
       <div className="absolute inset-0 hero-scrim" />

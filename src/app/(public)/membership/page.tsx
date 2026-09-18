@@ -1,9 +1,11 @@
-import { createClient } from '@/lib/supabase/server'
+import { createPublicClient } from '@/lib/supabase/public'
 import Link from 'next/link'
 import { RepCounter } from '@/components/ui/rep-counter'
 import { CTABand } from '@/components/ui/cta-band'
 import { MembershipPricing } from '@/components/membership/membership-pricing'
 import { CheckCircle2, HelpCircle } from 'lucide-react'
+
+export const revalidate = 3600; // Cache the page for 1 hour
 
 export const metadata = {
   title: 'Membership — The Gymist | Gym in Kilimani, Nairobi',
@@ -11,7 +13,7 @@ export const metadata = {
 }
 
 export default async function MembershipPage() {
-  const supabase = await createClient()
+  const supabase = createPublicClient()
 
   // Fetch membership plans
   const { data: plans } = await supabase
