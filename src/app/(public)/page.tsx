@@ -22,28 +22,25 @@ export const metadata: Metadata = {
 
 const pillars = [
   {
-    icon: Dumbbell,
     title: "Strength",
     description:
       "Barbell and dumbbell programmes built on progressive overload. Squat, press, pull, hinge — coached every rep.",
     href: "/workouts?category=Strength",
-    image: "/images/placeholder-strength.jpg",
+    image: "/supabase-mock/barbell-back-squat.webp",
   },
   {
-    icon: Zap,
     title: "Conditioning",
     description:
       "Engine work that builds capacity without burning you out. Intervals, circuits, and Hyrox prep.",
     href: "/workouts?category=Conditioning",
-    image: "/images/placeholder-conditioning.jpg",
+    image: "/supabase-mock/battle-ropes.webp",
   },
   {
-    icon: Heart,
     title: "Mobility & Recovery",
     description:
       "Movement screening, joint prep, and recovery protocols. The training nobody sees that makes everything else possible.",
     href: "/workouts?category=Mobility",
-    image: "/images/placeholder-mobility.jpg",
+    image: "/supabase-mock/90-90-hip-mobility-flow.webp",
   },
 ];
 
@@ -76,9 +73,13 @@ export default function HomePage() {
                   className="group block bg-white rounded overflow-hidden border border-ink/5 hover:border-ink/10 transition-all hover:-translate-y-1"
                 >
                   <div className="aspect-[4/3] relative overflow-hidden bg-charcoal">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <pillar.icon size={48} className="text-white/20" />
-                    </div>
+                    <Image
+                      src={pillar.image}
+                      alt={pillar.title}
+                      fill
+                      className="object-cover saturate-[0.85] group-hover:saturate-100 group-hover:scale-105 transition-all duration-500"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
                   <div className="p-6">
                     <h3 className="mb-2 group-hover:text-ink transition-colors">
