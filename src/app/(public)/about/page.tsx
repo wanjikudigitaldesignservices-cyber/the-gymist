@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Users, Target, Eye, BarChart3 } from "lucide-react";
 import { RepCounter } from "@/components/ui/rep-counter";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
@@ -92,9 +93,7 @@ export default function AboutPage() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <div className="aspect-[4/3] rounded overflow-hidden bg-charcoal relative">
-                <div className="absolute inset-0 flex items-center justify-center text-white/10">
-                  <span className="font-heading text-6xl">2015</span>
-                </div>
+                <Image src="/supabase-mock/gym-exterior.webp" alt="The Gymist Exterior" fill className="object-cover" />
               </div>
             </FadeIn>
           </div>
